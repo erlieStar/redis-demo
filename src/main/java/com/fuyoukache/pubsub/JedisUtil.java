@@ -12,7 +12,7 @@ public class JedisUtil {
     JedisPoolConfig config = new JedisPoolConfig();
     config.setMaxIdle(20);
     config.setMaxTotal(256);
-    return new JedisPool(config,"www.erlie.cc", 6379);
+    return new JedisPool(config,"127.0.0.1", 6379);
   }
 
   public Jedis getRedisClient() {

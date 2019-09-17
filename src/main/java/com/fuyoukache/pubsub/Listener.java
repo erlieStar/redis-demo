@@ -12,6 +12,8 @@ public class Listener extends JedisPubSub {
 
   public void subscribe(String channel) {
     Jedis jedis = JedisUtil.getInstance().getRedisClient();
-    jedis.subscribe(this, channel);
+    new Thread(() -> {
+        jedis.subscribe(this, channel);
+    }).start();
   }
 }
